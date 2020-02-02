@@ -95,9 +95,7 @@ public class PauseMenu : MonoBehaviour
 
     public void EndGame()
     {
-        Debug.Log("ouiouioui222222");
         gameOverUI.SetActive(true);
-        //SceneManager.LoadScene("EndScene");
     }
 
     public void LoadGame()
