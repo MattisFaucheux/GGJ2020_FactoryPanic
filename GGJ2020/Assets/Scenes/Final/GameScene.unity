@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.11
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.115665324, g: 0.118703224, b: 0.109928064, a: 0.11}
+  m_IndirectSpecularColor: {r: 0.11566549, g: 0.11870328, b: 0.10992796, a: 0.11}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -844,21 +844,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ec7fde002a85347b5cf06713fb3d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pipes:
-  - {fileID: 1031639856}
-  - {fileID: 625226852}
-  - {fileID: 1259134223}
   m_pipelights:
   - {fileID: 1356583638}
   - {fileID: 515751895}
   - {fileID: 905495635}
-  isBorked: 
+  m_pipes:
+  - {fileID: 1031639856}
+  - {fileID: 625226852}
+  - {fileID: 1259134223}
   m_valve:
   - {fileID: 816127463}
   - {fileID: 916978442}
   - {fileID: 1372854808}
-  minSecondsBeforeNextBreak: 0
-  maxSecondsBeforeNextBreak: 3
+  isBorked: 
+  minSecondsBeforeNextBreak: 15
+  maxSecondsBeforeNextBreak: 35
   timeToActive: 4
 --- !u!4 &219778356
 Transform:
@@ -1381,8 +1381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026ca3621c7af934c8572a8bf870e71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSecondsBeforeNextBreak: 0
-  maxSecondsBeforeNextBreak: 5
+  minSecondsBeforeNextBreak: 5
+  maxSecondsBeforeNextBreak: 30
 --- !u!114 &377371277 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3532436119545321982, guid: 74ab1b6bb025931499923cc84b5e6860,
@@ -2523,54 +2523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 664360607}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 2
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &712828953
 GameObject:
   m_ObjectHideFlags: 0
@@ -8053,6 +8005,16 @@ PrefabInstance:
       propertyPath: repairConvoyer
       value: 
       objectReference: {fileID: 966596385}
+    - target: {fileID: 4401220370657365154, guid: 92e90538ad6f15c4cbb1c013e37040e5,
+        type: 3}
+      propertyPath: minSecondsBeforeNextBreak
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401220370657365154, guid: 92e90538ad6f15c4cbb1c013e37040e5,
+        type: 3}
+      propertyPath: maxSecondsBeforeNextBreak
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92e90538ad6f15c4cbb1c013e37040e5, type: 3}
 --- !u!1001 &877015681
@@ -8131,6 +8093,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001884567}
     m_Modifications:
+    - target: {fileID: -58457995505381801, guid: 1767b535c82c5e2478f425bddc9119e2,
+        type: 3}
+      propertyPath: minSecondsBeforeNextBreak
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -58457995505381801, guid: 1767b535c82c5e2478f425bddc9119e2,
+        type: 3}
+      propertyPath: maxSecondsBeforeNextBreak
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6078080167557749978, guid: 1767b535c82c5e2478f425bddc9119e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22503,7 +22475,7 @@ PrefabInstance:
     - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
       propertyPath: maxSecondsBeforeNextBreak
-      value: 10
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
@@ -23933,11 +23905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 98fddbcb009952e408aff86661bbaa98, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!4 &2051084143
 Transform:
   m_ObjectHideFlags: 0
@@ -24259,6 +24226,11 @@ PrefabInstance:
       propertyPath: PipeBreakManager
       value: 
       objectReference: {fileID: 219778355}
+    - target: {fileID: 7571687149288058605, guid: 46b9c674ead04fa4784c11848431bdb7,
+        type: 3}
+      propertyPath: diviseur
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7571687149288058606, guid: 46b9c674ead04fa4784c11848431bdb7,
         type: 3}
       propertyPath: m_Name
