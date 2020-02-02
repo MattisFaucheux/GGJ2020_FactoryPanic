@@ -8,6 +8,8 @@ public class Flammable : MonoBehaviour
     private ParticleSystem m_particleSystem;
     private bool m_isOnfire = false;
     
+
+
     public void SetIsOnFire(bool isOnFire)
     {
         m_isOnfire = isOnFire;
