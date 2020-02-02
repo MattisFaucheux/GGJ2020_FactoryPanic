@@ -28,6 +28,7 @@ public class Catch : MonoBehaviour
             {
                 m_pickable.GetComponent<Transform>().SetParent(null);
                 m_pickable.AddComponent<Rigidbody>();
+                m_pickable.GetComponent<Rigidbody>().mass = 100;
                 m_objectInHand = ObjectInHand.None;
                 m_pickable = null;
             }
