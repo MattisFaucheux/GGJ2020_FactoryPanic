@@ -50,5 +50,6 @@ public class BrokentObjectManager : MonoBehaviour
         }
 
         damage += (num * Time.deltaTime) / diviseur;
+
     }
 }

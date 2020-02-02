@@ -17,13 +17,17 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(manager.damage >= 100.0f)
+        if(manager.damage >= 50.0f)
         {
+            GetComponentInParent<PauseMenu>().EndGame();
             GetComponent<RectTransform>().localScale = new Vector3(0, GetComponent<RectTransform>().localScale.y, GetComponent<RectTransform>().localScale.z);
+            
         }
         else
         {
+            Debug.Log(manager.damage);
             GetComponent<RectTransform>().localScale = new Vector3(scaleX - (manager.damage / scaleX), GetComponent<RectTransform>().localScale.y, GetComponent<RectTransform>().localScale.z);
         }
+
     }
 }

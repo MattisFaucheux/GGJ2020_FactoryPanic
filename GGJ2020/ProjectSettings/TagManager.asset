@@ -9,6 +9,8 @@ TagManager:
   - Puddle
   - Pipe
   - Valve
+  - Timer
+  - Life
   layers:
   - Default
   - TransparentFX

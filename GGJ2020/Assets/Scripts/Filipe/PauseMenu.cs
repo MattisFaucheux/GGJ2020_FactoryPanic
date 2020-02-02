@@ -8,14 +8,16 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    [FormerlySerializedAs("pauseMenu")] [SerializeField]
+    [FormerlySerializedAs("pauseMenu")]
+    [SerializeField]
     private GameObject m_pauseMenu;
-    [FormerlySerializedAs("soundMenu")] [SerializeField]
+    [FormerlySerializedAs("soundMenu")]
+    [SerializeField]
     private GameObject m_soundMenu;
 
     [SerializeField] private GameObject ResumeButtonPause;
     [SerializeField] private GameObject CloseButtonSound;
-    
+
     [SerializeField]
     private EventSystem m_es;
     private float m_timer;
@@ -27,10 +29,11 @@ public class PauseMenu : MonoBehaviour
         m_soundMenu.SetActive(false);
         ResetTimer();
     }
-    
+
     // Update is called once per frame
     void Update()
     {
+
         if (!m_pauseMenu.activeSelf)
         {
             m_timer += Time.deltaTime;
@@ -38,7 +41,12 @@ public class PauseMenu : MonoBehaviour
             string seconds = (m_timer % 60).ToString("00");
             FindObjectOfType<Text>().text = string.Format("{0}:{1}", minutes, seconds);
         }
-        
+
+        if (GetComponentInChildren<Health>())
+        {
+
+        }
+
         if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) && !m_pauseMenu.activeSelf)
         {
             OpenPause();
@@ -71,7 +79,7 @@ public class PauseMenu : MonoBehaviour
         m_pauseMenu.SetActive(false);
         m_es.SetSelectedGameObject(CloseButtonSound);
     }
-    
+
     public void CloseSound()
     {
         m_soundMenu.SetActive(false);
@@ -82,4 +90,10 @@ public class PauseMenu : MonoBehaviour
     {
         m_timer = 0.0f;
     }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
+
 }
