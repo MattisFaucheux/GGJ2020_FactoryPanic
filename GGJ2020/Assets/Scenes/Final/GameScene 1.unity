@@ -1313,7 +1313,7 @@ PrefabInstance:
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.301352
+      value: -17.32
       objectReference: {fileID: 0}
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
@@ -1420,7 +1420,7 @@ PrefabInstance:
     - target: {fileID: 6294936105622462062, guid: 3a42b94cdeb4b0d4aace4f0aaf43d740,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.9
+      value: -13.918648
       objectReference: {fileID: 0}
     - target: {fileID: 6294936105622462062, guid: 3a42b94cdeb4b0d4aace4f0aaf43d740,
         type: 3}
@@ -1835,7 +1835,7 @@ PrefabInstance:
     - target: {fileID: 3982173052868546952, guid: d8e03c4c08ac06d45b69e81a8776880c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.301352
+      value: -17.32
       objectReference: {fileID: 0}
     - target: {fileID: 3982173052868546952, guid: d8e03c4c08ac06d45b69e81a8776880c,
         type: 3}
@@ -1935,7 +1935,7 @@ PrefabInstance:
     - target: {fileID: 3982173052868546952, guid: d8e03c4c08ac06d45b69e81a8776880c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.301352
+      value: -17.32
       objectReference: {fileID: 0}
     - target: {fileID: 3982173052868546952, guid: d8e03c4c08ac06d45b69e81a8776880c,
         type: 3}
@@ -1960,7 +1960,7 @@ PrefabInstance:
     - target: {fileID: 3982173052868546952, guid: d8e03c4c08ac06d45b69e81a8776880c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3982173052868546952, guid: d8e03c4c08ac06d45b69e81a8776880c,
         type: 3}
@@ -7649,7 +7649,7 @@ PrefabInstance:
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.301352
+      value: -17.32
       objectReference: {fileID: 0}
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
@@ -7817,7 +7817,7 @@ PrefabInstance:
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.301352
+      value: -17.32
       objectReference: {fileID: 0}
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
@@ -8507,7 +8507,7 @@ PrefabInstance:
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.301352
+      value: -17.32
       objectReference: {fileID: 0}
     - target: {fileID: 1378041843137095565, guid: b21733c10a762664796c0cb6e58c2bc6,
         type: 3}
@@ -20278,6 +20278,9 @@ GameObject:
   - component: {fileID: 1683852153}
   - component: {fileID: 1683852151}
   - component: {fileID: 1683852152}
+  - component: {fileID: 1683852156}
+  - component: {fileID: 1683852155}
+  - component: {fileID: 1683852154}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -20333,6 +20336,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1683852154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683852150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: JoyXPlayer2
+  m_VerticalAxis: JoyYPlayer2
+  m_SubmitButton: InteractPlayer2
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1683852155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683852150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: JoyXPlayer1
+  m_VerticalAxis: JoyYPlayer1
+  m_SubmitButton: InteractPlayer1
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1683852156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683852150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: HorizontalPlayer2
+  m_VerticalAxis: VerticalPlayer2
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1727734320 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2685429718061766046, guid: b21733c10a762664796c0cb6e58c2bc6,
