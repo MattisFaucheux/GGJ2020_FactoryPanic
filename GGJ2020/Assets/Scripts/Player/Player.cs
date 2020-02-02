@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 
             if (x != 0.0f || z != 0.0f)
             {
-                playerMesh.eulerAngles = new Vector3(-90, 0, (Mathf.Atan2(x, z) * 180 / Mathf.PI) + 90);
+                playerMesh.eulerAngles = new Vector3(0, (Mathf.Atan2(x, z) * 180 / Mathf.PI), 0);
             }
 
             Vector3 move = transform.right * x + transform.forward * z;
