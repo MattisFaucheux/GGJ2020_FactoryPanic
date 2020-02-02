@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     private float m_lastX;
     private float m_lastZ;
 
+    public PipeBreakManager pipeBreakManager;
+
     void Start()
     {
         m_controller = GetComponent<CharacterController>();
@@ -63,11 +65,11 @@ public class Player : MonoBehaviour
             }
             else if (other.CompareTag("Pipe"))
             {
-                other.gameObject.GetComponent<PipeBreakManager>().FixPipe(other.name);
+                pipeBreakManager.FixPipe(other.name);
             }
             else if (other.CompareTag("Valve"))
             {
-                other.gameObject.GetComponent<PipeBreakManager>().FixValve(other.name);
+                pipeBreakManager.FixValve(other.name);
             }
         }
     }

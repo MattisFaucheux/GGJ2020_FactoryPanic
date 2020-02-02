@@ -14,8 +14,12 @@ public class PipeBreakManager : MonoBehaviour
     public int minSecondsBeforeNextBreak = 0;
     public int maxSecondsBeforeNextBreak = 5;
 
-    public List<bool> isFixingValve;
-    public List<bool> isFixingPipe;
+    private List<bool> isFixingValve;
+    private List<float> timeFixingValve;
+    private List<bool> isFixingPipe;
+    private List<float> timeFixingPipe;
+
+    public float timeToActive = 4.0f;
 
     void Start()
     {
@@ -24,11 +28,44 @@ public class PipeBreakManager : MonoBehaviour
         isFixingValve = new List<bool>();
         isFixingPipe = new List<bool>();
 
+        timeFixingPipe = new List<float>();
+        timeFixingValve = new List<float>();
         for (int i = 0; i < 3; i++)
         {
             isBorked.Add(false);
             isFixingValve.Add(false);
             isFixingPipe.Add(false);
+            timeFixingPipe.Add(0.0f);
+            timeFixingValve.Add(0.0f);
+        }
+    }
+
+    void Update()
+    {
+        for(int i =0; i < 3; i++)
+        {
+            if(isFixingPipe[i] && isFixingValve[i])
+            {
+                ResetValveAndPipe(i);
+            }
+                                 
+            if(timeFixingPipe[i] > 0.0f)
+            {
+                timeFixingPipe[i] -= Time.deltaTime;
+            }
+            else
+            {
+                isFixingPipe[i] = false;
+            }
+
+            if (timeFixingValve[i] > 0.0f)
+            {
+                timeFixingValve[i] -= Time.deltaTime;
+            }
+            else
+            {
+                isFixingValve[i] = false;
+            }
         }
     }
 
@@ -68,6 +105,7 @@ public class PipeBreakManager : MonoBehaviour
                 break;
         }
 
+        timeFixingValve[index] = timeToActive;
         isFixingValve[index] = true;
     }
     
@@ -87,17 +125,16 @@ public class PipeBreakManager : MonoBehaviour
                 break;
         }
 
+        timeFixingPipe[index] = timeToActive;
         isFixingPipe[index] = true;
     }
 
-    void StoppedFixingValve(int valveIndex)
+    void ResetValveAndPipe(int index)
     {
-        isFixingValve[valveIndex] = false;
-    }
-    
-    void StoppedFixingPipe(int valveIndex)
-    {
-        isFixingPipe[valveIndex] = false;
+        isBorked[index] = false;
+        m_pipelights[index].SetColor("_Color", Color.white);
+        m_valveLights[index].SetColor("_Color", Color.white);
+        m_pipes[index].transform.GetComponentInChildren<ParticleSystem>().Stop();
     }
 
     private void OnApplicationQuit()
