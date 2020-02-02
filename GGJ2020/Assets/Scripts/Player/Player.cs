@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         {
             if (other.CompareTag("Puddle") && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Mop)
             {
-                Destroy(other.gameObject);
+                other.gameObject.GetComponent<Puddle>().Disable();
                 GetComponent<Catch>().DestroyPickable();
             }
             else if (other.gameObject.GetComponent<Flammable>() && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Extinguisher)
@@ -63,9 +63,10 @@ public class Player : MonoBehaviour
             {
                 other.gameObject.GetComponent<RepairConvoyer>().PlayerActivate(playerNumber);
             }
-            else if (other.CompareTag("Pipe"))
+            else if (other.CompareTag("Pipe") && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Tape)
             {
                 pipeBreakManager.FixPipe(other.name);
+                GetComponent<Catch>().DestroyPickable();
             }
             else if (other.CompareTag("Valve"))
             {

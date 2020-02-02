@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2955112367118051052}
   - component: {fileID: 8808515724640557589}
   - component: {fileID: 1128076504485004019}
+  - component: {fileID: -58457995505381801}
   m_Layer: 0
   m_Name: Puddle
   m_TagString: Puddle
@@ -87,9 +88,23 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7062475916675821257}
-  m_Material: {fileID: 13400000, guid: 0d43b669fbb8cb947b273ebb6de7a015, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8942084, y: 1.6056604, z: 1.91172}
   m_Center: {x: -0.010216634, y: 0.7862117, z: 0.010129321}
+--- !u!114 &-58457995505381801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7062475916675821257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0a0138eccc2024990555a5a8d0bfd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSecondsBeforeNextBreak: 10
+  maxSecondsBeforeNextBreak: 30

@@ -14,13 +14,16 @@ public class RepairConvoyer : MonoBehaviour
 
     public float timeToActive = 4.0f;
 
+    public int minSecondsBeforeNextBreak = 10;
+    public int maxSecondsBeforeNextBreak = 30;
+
     public Material on;
     public Material off;
 
     // Start is called before the first frame update
     void Start()
     {
-        Disable();
+        StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class RepairConvoyer : MonoBehaviour
         {
             m_isActivated = true;
             GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(on);
+            StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
         }
 
         if (m_timeActivePlayer1 > 0.0f)
@@ -69,6 +73,13 @@ public class RepairConvoyer : MonoBehaviour
     {
         m_isActivated = false;
         GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(off);
+    }
+
+    IEnumerator StartNextDefect(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Disable();
+
     }
 
 }
