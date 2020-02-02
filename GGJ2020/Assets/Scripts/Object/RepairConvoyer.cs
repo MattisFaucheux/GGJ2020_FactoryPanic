@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverLight : MonoBehaviour
+public class RepairConvoyer : MonoBehaviour
 {
 
-    public Light ourLight;
-    public Light emergencyLight;
-    public Transform lever;
     public bool m_isActivated = false;
 
     private bool m_activatePlayer1 = false;
@@ -16,6 +13,9 @@ public class LeverLight : MonoBehaviour
     private float m_timeActivePlayer2;
 
     public float timeToActive = 4.0f;
+
+    public Material on;
+    public Material off;
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +26,13 @@ public class LeverLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_activatePlayer1 && m_activatePlayer2 && !m_isActivated)
+        if (m_activatePlayer1 && m_activatePlayer2 && !m_isActivated)
         {
             m_isActivated = true;
-            emergencyLight.GetComponent<Light>().enabled = false;
-            ourLight.GetComponent<Light>().enabled = true;
-            lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 100);
+            GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(on);
         }
 
-        if(m_timeActivePlayer1 > 0.0f)
+        if (m_timeActivePlayer1 > 0.0f)
         {
             m_timeActivePlayer1 -= Time.deltaTime;
         }
@@ -55,12 +53,12 @@ public class LeverLight : MonoBehaviour
 
     public void PlayerActivate(float playerNumber)
     {
-        if(playerNumber == 1)
+        if (playerNumber == 1)
         {
             m_activatePlayer1 = true;
             m_timeActivePlayer1 = timeToActive;
         }
-        else if(playerNumber == 2)
+        else if (playerNumber == 2)
         {
             m_activatePlayer2 = true;
             m_timeActivePlayer2 = timeToActive;
@@ -69,10 +67,8 @@ public class LeverLight : MonoBehaviour
 
     void Disable()
     {
-        ourLight.GetComponent<Light>().enabled = false;
-        emergencyLight.GetComponent<Light>().enabled = true;
         m_isActivated = false;
-        lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 0);
+        GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(off);
     }
 
 }

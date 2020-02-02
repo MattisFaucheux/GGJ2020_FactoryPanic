@@ -2628,6 +2628,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_TapisRoulant_02
       objectReference: {fileID: 0}
+    - target: {fileID: 3056354290159201272, guid: a14b8434ab5b30e4eba674ded506410c,
+        type: 3}
+      propertyPath: m_Name
+      value: Buttons
+      objectReference: {fileID: 0}
     - target: {fileID: 3331173995453735111, guid: a14b8434ab5b30e4eba674ded506410c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7267,6 +7272,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a42b94cdeb4b0d4aace4f0aaf43d740, type: 3}
+--- !u!1 &2017947499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3056354290159201272, guid: a14b8434ab5b30e4eba674ded506410c,
+    type: 3}
+  m_PrefabInstance: {fileID: 641637876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2017947503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017947499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d6149c7ff4df04c9963ac0f8cc44a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToActive: 4
+  on: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
+  off: {fileID: 2100000, guid: 4a541caa472c3a549be34a29dacf7ac3, type: 2}
+--- !u!65 &2017947504
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017947499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008858985, y: 0.0330831, z: 0.008858982}
+  m_Center: {x: -0.019221595, y: -0.025938142, z: 0.010273699}
 --- !u!1 &2027740292
 GameObject:
   m_ObjectHideFlags: 0
