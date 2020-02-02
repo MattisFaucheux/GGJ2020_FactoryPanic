@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
                 Destroy(other.gameObject);
                 GetComponent<Catch>().DestroyPickable();
             }
-            else if (other.gameObject.GetComponent<Flammable>() && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Extinguisher)
+            else if (other.gameObject.GetComponent<Flammable>() && other.gameObject.GetComponent<Flammable>().GetIsOnFire() && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Extinguisher)
             {
                 other.gameObject.GetComponent<Flammable>().SetIsOnFire(false);
                 GetComponent<Catch>().DestroyPickable();

@@ -21,4 +21,9 @@ public class Flammable : MonoBehaviour
         }
         
     }
+
+    public bool GetIsOnFire()
+    {
+        return m_isOnfire;
+    }
 }
