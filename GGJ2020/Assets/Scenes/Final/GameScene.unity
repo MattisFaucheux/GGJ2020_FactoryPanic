@@ -5834,7 +5834,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 372585698}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1774302091
+--- !u!65 &1774302094
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7272,7 +7272,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 372585698}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2064625169
+--- !u!65 &2064625172
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7385,6 +7385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2079569500}
   - component: {fileID: 2079569499}
+  - component: {fileID: 2079569501}
   m_Layer: 0
   m_Name: Emergency light
   m_TagString: Untagged
@@ -7460,13 +7461,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079569498}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.550216, y: 0.40830866, z: -0.524693, w: -0.5052164}
   m_LocalPosition: {x: 15.55, y: 12.39, z: 2.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2007537499}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 79.87601, y: 69.662, z: -207.385}
+--- !u!95 &2079569501
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079569498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c80a6edc86d91f842b88d8fe33d95f44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2092679027
 GameObject:
   m_ObjectHideFlags: 0
