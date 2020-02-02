@@ -24,6 +24,8 @@ public class ActiveConvoyer : MonoBehaviour
     private bool m_ready = true;
     private List<GameObject> m_instantiates;
 
+    public RepairConvoyer repairConvoyer;
+
     private void Start()
     {
         m_instantiates = new List<GameObject>();
@@ -31,9 +33,10 @@ public class ActiveConvoyer : MonoBehaviour
         {
             GetComponent<Renderer>().materials[1].CopyPropertiesFromMaterial(m_breakButtonColor);
         }
-    }
 
-    public RepairConvoyer repairConvoyer;
+        m_ready = true;
+        GetComponent<Renderer>().materials[1].CopyPropertiesFromMaterial(m_offButtonColor);
+    }
 
     private void Update()
     {

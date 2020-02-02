@@ -65,7 +65,6 @@ public class Player : MonoBehaviour
             }
             else if (other.gameObject.GetComponent<ActiveConvoyer>())
             {
-                Debug.Log("Active Convoyer");
                 other.gameObject.GetComponent<ActiveConvoyer>().SpawnItem();
             }
             else if (other.gameObject.GetComponent<RepairConvoyer>())

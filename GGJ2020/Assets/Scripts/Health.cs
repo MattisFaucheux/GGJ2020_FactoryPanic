@@ -19,13 +19,11 @@ public class Health : MonoBehaviour
     {
         if(manager.damage >= 50.0f)
         {
-            GetComponentInParent<PauseMenu>().EndGame();
             GetComponent<RectTransform>().localScale = new Vector3(0, GetComponent<RectTransform>().localScale.y, GetComponent<RectTransform>().localScale.z);
-            
+            GetComponentInParent<PauseMenu>().EndGame();   
         }
         else
         {
-            Debug.Log(manager.damage);
             GetComponent<RectTransform>().localScale = new Vector3(scaleX - (manager.damage / scaleX), GetComponent<RectTransform>().localScale.y, GetComponent<RectTransform>().localScale.z);
         }
 

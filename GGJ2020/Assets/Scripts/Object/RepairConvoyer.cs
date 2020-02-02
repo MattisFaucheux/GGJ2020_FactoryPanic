@@ -6,7 +6,7 @@ public class RepairConvoyer : MonoBehaviour
 {
     public Script_TexturePanning textureAnim;
 
-    public bool m_isActivated = false;
+    public bool m_isActivated = true;
 
     private bool m_activatePlayer1 = false;
     private float m_timeActivePlayer1;
@@ -88,7 +88,6 @@ public class RepairConvoyer : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         Disable();
-
     }
 
 }
