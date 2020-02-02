@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
     private EventSystem m_es;
     private float m_timer;
 
+    public GameObject gameOverUI;
 
     void Start()
     {
@@ -93,7 +94,13 @@ public class PauseMenu : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene("EndScene");
+        Debug.Log("ouiouioui222222");
+        gameOverUI.SetActive(true);
+        //SceneManager.LoadScene("EndScene");
     }
 
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("GameScene");           
+    }
 }
