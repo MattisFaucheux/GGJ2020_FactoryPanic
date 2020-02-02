@@ -36,8 +36,7 @@ public class Player : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if ((Input.GetKeyDown(KeyCode.F) && GetComponentInParent<Player>().playerNumber == 1) ||
-            (Input.GetKeyDown(KeyCode.Return) && GetComponentInParent<Player>().playerNumber == 2))
+        if (Input.GetButtonDown("Interact2Player" + playerNumber))
         {
             if (other.CompareTag("Puddle") && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Mop)
             {
