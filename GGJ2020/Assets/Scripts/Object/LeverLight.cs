@@ -20,6 +20,9 @@ public class LeverLight : MonoBehaviour
     public int minSecondsBeforeNextBreak = 10;
     public int maxSecondsBeforeNextBreak = 30;
 
+    public Material hdrRed;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +94,7 @@ public class LeverLight : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         Disable();
-        
+
     }
 
 }
