@@ -2551,6 +2551,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
+      propertyPath: ourLight.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
+        type: 3}
       propertyPath: ourLight
       value: 
       objectReference: {fileID: 2080190344}
@@ -2559,6 +2564,11 @@ PrefabInstance:
       propertyPath: emergencyLight
       value: 
       objectReference: {fileID: 535117521}
+    - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
+        type: 3}
+      propertyPath: ourLight.Array.data[0]
+      value: 
+      objectReference: {fileID: 2080190344}
     - target: {fileID: 5166212965756047331, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
       propertyPath: m_LocalPosition.x
