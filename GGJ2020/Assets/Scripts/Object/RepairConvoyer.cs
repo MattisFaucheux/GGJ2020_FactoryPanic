@@ -30,7 +30,6 @@ public class RepairConvoyer : MonoBehaviour
         {
             m_isActivated = true;
             GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(on);
-            Debug.Log("repair");
         }
 
         if (m_timeActivePlayer1 > 0.0f)
