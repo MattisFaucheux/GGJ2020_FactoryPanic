@@ -23,6 +23,7 @@ public class LeverLight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        emergencyLight.GetComponent<Light>().enabled = false;
         StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
     }
 
