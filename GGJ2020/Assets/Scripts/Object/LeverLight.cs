@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeverLight : MonoBehaviour
 {
 
-    public Light ourLight;
+    public Light[] ourLight;
     public Light emergencyLight;
     public Transform lever;
     public bool m_isActivated = false;
@@ -33,7 +33,11 @@ public class LeverLight : MonoBehaviour
         {
             m_isActivated = true;
             emergencyLight.GetComponent<Light>().enabled = false;
-            ourLight.GetComponent<Light>().enabled = true;
+
+            for (int i = 0; i < ourLight.Length; i++)
+            {
+                ourLight[i].GetComponent<Light>().enabled = true;
+            }
             lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 100);
             StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
         }
@@ -73,7 +77,10 @@ public class LeverLight : MonoBehaviour
 
     void Disable()
     {
-        ourLight.GetComponent<Light>().enabled = false;
+        for (int i = 0; i < ourLight.Length; i++)
+        {
+            ourLight[i].GetComponent<Light>().enabled = false;
+        }
         emergencyLight.GetComponent<Light>().enabled = true;
         m_isActivated = false;
         lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 0);
