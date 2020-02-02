@@ -26,6 +26,8 @@ public class ActiveConvoyer : MonoBehaviour
         m_instantiates = new List<GameObject>();
     }
 
+    public RepairConvoyer repairConvoyer;
+
     private void Update()
     {
         if (m_timer >= 0.0f)
@@ -42,7 +44,7 @@ public class ActiveConvoyer : MonoBehaviour
 
     public void SpawnItem()
     {
-        if (!m_ready)
+        if (!m_ready || !repairConvoyer.m_isActivated)
         {
             return;
         }
