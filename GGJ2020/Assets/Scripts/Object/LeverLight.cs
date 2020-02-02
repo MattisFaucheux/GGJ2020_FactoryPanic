@@ -37,6 +37,7 @@ public class LeverLight : MonoBehaviour
         {
             m_isActivated = true;
             emergencyLight.GetComponent<Light>().enabled = false;
+            hdrRed.DisableKeyword("_EMISSION");
 
             for (int i = 0; i < ourLight.Length; i++)
             {
@@ -85,6 +86,7 @@ public class LeverLight : MonoBehaviour
         {
             ourLight[i].GetComponent<Light>().enabled = false;
         }
+        hdrRed.EnableKeyword("_EMISSION");
         emergencyLight.GetComponent<Light>().enabled = true;
         m_isActivated = false;
         lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 0);
