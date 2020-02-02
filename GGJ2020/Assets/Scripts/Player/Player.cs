@@ -61,6 +61,14 @@ public class Player : MonoBehaviour
             {
                 other.gameObject.GetComponent<RepairConvoyer>().PlayerActivate(playerNumber);
             }
+            else if (other.CompareTag("Pipe"))
+            {
+                other.gameObject.GetComponent<PipeBreakManager>().FixPipe(other.name);
+            }
+            else if (other.CompareTag("Valve"))
+            {
+                other.gameObject.GetComponent<PipeBreakManager>().FixValve(other.name);
+            }
         }
     }
 
