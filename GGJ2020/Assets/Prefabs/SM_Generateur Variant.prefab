@@ -25,6 +25,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6bb0246db63014c8fc13e57c3d9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_particleSystem: {fileID: 0}
+--- !u!114 &-8611209500602486521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470082433667502769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026ca3621c7af934c8572a8bf870e71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSecondsBeforeNextBreak: 0
+  maxSecondsBeforeNextBreak: 5
 --- !u!1001 &1480274099043060664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,7 +120,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 343784d958e80ef46bc1a6065cc6a748,
         type: 3}
       propertyPath: m_Name
-      value: SM_Generateur
+      value: SM_Generateur Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 343784d958e80ef46bc1a6065cc6a748,
         type: 3}
