@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PipeBreakManager : MonoBehaviour
 {
+    public List<Light> m_pipelights;
     [SerializeField] private List<GameObject> m_pipes;
-    [SerializeField] private List<Material> m_pipelights;
-    [SerializeField] private List<Material> m_valveLights;
-    public List<bool> isBorked;
-
     [SerializeField] private List<GameObject> m_valve;
 
+    public List<bool> isBorked;
+    
     public int minSecondsBeforeNextBreak = 0;
     public int maxSecondsBeforeNextBreak = 5;
 
@@ -46,6 +45,7 @@ public class PipeBreakManager : MonoBehaviour
             if(isFixingPipe[i] && isFixingValve[i])
             {
                 ResetValveAndPipe(i);
+                m_pipelights[i].GetComponent<Light>().enabled = false;
             }
                                  
             if(timeFixingPipe[i] > 0.0f)
@@ -78,12 +78,8 @@ public class PipeBreakManager : MonoBehaviour
 
         m_pipes[index].GetComponent<Animator>().SetBool("play", true);
         m_pipes[index].transform.GetComponentInChildren<ParticleSystem>().Play();
+        m_pipelights[index].GetComponent<Light>().enabled = true;
         isBorked[index] = true;
-        float colx = Random.Range(0, 256);
-        float coly = Random.Range(0, 256);
-        float colz = Random.Range(0, 256);
-        m_pipelights[index].SetColor("_Color", new Color(colx / 255.0f, coly / 255.0f, colz / 255.0f));
-        m_valveLights[index].SetColor("_Color", new Color(colx / 255.0f, coly / 255.0f, colz / 255.0f));
 
         yield return StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak));
     }
@@ -131,18 +127,8 @@ public class PipeBreakManager : MonoBehaviour
     void ResetValveAndPipe(int index)
     {
         isBorked[index] = false;
-        m_pipelights[index].SetColor("_Color", Color.white);
-        m_valveLights[index].SetColor("_Color", Color.white);
         m_pipes[index].transform.GetComponentInChildren<ParticleSystem>().Stop();
         m_pipes[index].GetComponent<Animator>().SetBool("play", false);
     }
 
-    private void OnApplicationQuit()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            m_pipelights[i].SetColor("_Color", Color.white);
-            m_valveLights[i].SetColor("_Color", Color.white);
-        }
-    }
 }
