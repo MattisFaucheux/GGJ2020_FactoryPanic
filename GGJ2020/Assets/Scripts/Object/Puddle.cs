@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public class Puddle : MonoBehaviour
@@ -30,8 +31,9 @@ public class Puddle : MonoBehaviour
         Enable();
     }
 
-    void Enable()
+    void Enable()    
     {
+        AudioManager.instance.SetIsOilSpawning(true);
         isActivated = true;
 
         GetComponent<BoxCollider>().enabled = true;

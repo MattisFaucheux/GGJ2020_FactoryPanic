@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public class PipeBreakManager : MonoBehaviour
@@ -81,6 +82,8 @@ public class PipeBreakManager : MonoBehaviour
         m_pipelights[index].GetComponent<Light>().enabled = true;
         isBorked[index] = true;
 
+        AudioManager.instance.SetIsPipeLeaking(true);
+        
         yield return StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak));
     }
 
@@ -129,6 +132,9 @@ public class PipeBreakManager : MonoBehaviour
         isBorked[index] = false;
         m_pipes[index].transform.GetComponentInChildren<ParticleSystem>().Stop();
         m_pipes[index].GetComponent<Animator>().SetBool("play", false);
+        
+        if (!isBorked[0] && !isBorked[1] && !isBorked[2])
+            AudioManager.instance.SetIsPipeLeaking(false);
     }
 
 }

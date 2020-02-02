@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public class Flammable : MonoBehaviour
@@ -21,6 +22,7 @@ public class Flammable : MonoBehaviour
         {
             m_particleSystem.Stop();
             GetComponent<GeneratorRandomBroke>().SetGeneratorOnFire();
+            AudioManager.instance.SetIsOnFire(false);
         }
         
     }

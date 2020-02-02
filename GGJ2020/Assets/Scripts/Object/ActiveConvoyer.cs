@@ -1,5 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public class ActiveConvoyer : MonoBehaviour
@@ -72,6 +73,7 @@ public class ActiveConvoyer : MonoBehaviour
         {
             m_instantiates.Add(Instantiate(m_objects[nbObject], m_transform.position, Quaternion.identity));
         }
+        AudioManager.instance.SetIsConveyorMoving(true);
         m_ready = false;
         m_timer = m_cooldown;
         GetComponent<Renderer>().materials[1].CopyPropertiesFromMaterial(m_onButtonColor);

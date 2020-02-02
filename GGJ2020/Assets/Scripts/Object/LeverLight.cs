@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public class LeverLight : MonoBehaviour
@@ -39,6 +40,8 @@ public class LeverLight : MonoBehaviour
             emergencyLight.GetComponent<Light>().enabled = false;
             hdrRed.DisableKeyword("_EMISSION");
 
+            AudioManager.instance.SetIsSwitching(true);
+            
             for (int i = 0; i < ourLight.Length; i++)
             {
                 ourLight[i].GetComponent<Light>().enabled = true;
