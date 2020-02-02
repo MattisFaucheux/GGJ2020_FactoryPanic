@@ -15,6 +15,9 @@ public class ActiveConvoyer : MonoBehaviour
     private Material m_onButtonColor;
     [SerializeField]
     private Material m_offButtonColor;
+    [SerializeField]
+    private Material m_breakButtonColor;
+
 
     public float m_cooldown = 5.0f;
     private float m_timer = 0.0f;
@@ -24,6 +27,10 @@ public class ActiveConvoyer : MonoBehaviour
     private void Start()
     {
         m_instantiates = new List<GameObject>();
+        if (!repairConvoyer.m_isActivated)
+        {
+            GetComponent<Renderer>().materials[1].CopyPropertiesFromMaterial(m_breakButtonColor);
+        }
     }
 
     public RepairConvoyer repairConvoyer;

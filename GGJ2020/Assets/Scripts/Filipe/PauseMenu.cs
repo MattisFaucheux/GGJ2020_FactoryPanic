@@ -34,6 +34,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OpenPause()
     {
+        Time.timeScale = 0;
         m_pauseMenu.SetActive(true);
         m_es.SetSelectedGameObject(ResumeButtonPause);
         m_soundMenu.SetActive(false);
@@ -47,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         m_pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void OpenSound()

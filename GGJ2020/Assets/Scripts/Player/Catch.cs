@@ -76,9 +76,7 @@ public class Catch : MonoBehaviour
     public void DestroyPickable()
     {
         Destroy(m_pickable);
-        m_objectInHand = ObjectInHand.None; 
+        m_objectInHand = ObjectInHand.None;
         m_pickable = null;
-        
-        
     }
 }

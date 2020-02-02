@@ -21,6 +21,11 @@ public class Player : MonoBehaviour
     private float m_lastX;
     private float m_lastZ;
 
+    [SerializeField]
+    private Transform m_spawnExtinguisher;
+    [SerializeField]
+    private GameObject m_extinguisher;
+
     public PipeBreakManager pipeBreakManager;
 
     void Start()
@@ -45,10 +50,11 @@ public class Player : MonoBehaviour
                 other.gameObject.GetComponent<Puddle>().Disable();
                 GetComponent<Catch>().DestroyPickable();
             }
-            else if (other.gameObject.GetComponent<Flammable>() && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Extinguisher)
+            else if (other.gameObject.GetComponent<Flammable>() && other.gameObject.GetComponent<Flammable>().GetIsOnFire() && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Extinguisher)
             {
                 other.gameObject.GetComponent<Flammable>().SetIsOnFire(false);
                 GetComponent<Catch>().DestroyPickable();
+                GameObject extinguisher = Instantiate<GameObject>(m_extinguisher, m_spawnExtinguisher.position, Quaternion.Euler(-90.0f, 0.0f, 0.0f));
             }
             else if (other.gameObject.GetComponent<LeverLight>())
             {

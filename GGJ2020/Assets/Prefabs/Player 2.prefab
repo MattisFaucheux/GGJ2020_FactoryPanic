@@ -1063,6 +1063,9 @@ MonoBehaviour:
   dashSpeed: 3
   dashTime: 0.2
   timeDashCooldown: 0
+  m_spawnExtinguisher: {fileID: 0}
+  m_extinguisher: {fileID: 3493741833104218121, guid: 57ae7adfa6ebc6743b2878af21fe7e60,
+    type: 3}
 --- !u!95 &8514365681030770231
 Animator:
   serializedVersion: 3
