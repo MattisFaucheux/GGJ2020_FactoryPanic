@@ -57,6 +57,10 @@ public class Player : MonoBehaviour
                 Debug.Log("Active Convoyer");
                 other.gameObject.GetComponent<ActiveConvoyer>().SpawnItem();
             }
+            else if (other.gameObject.GetComponent<RepairConvoyer>())
+            {
+                other.gameObject.GetComponent<RepairConvoyer>().PlayerActivate(playerNumber);
+            }
         }
     }
 
@@ -84,7 +88,16 @@ public class Player : MonoBehaviour
 
             if (x != 0.0f || z != 0.0f)
             {
-                playerMesh.eulerAngles = new Vector3(-90, 0, (Mathf.Atan2(x, z) * 180 / Mathf.PI) + 90);
+                if (GetComponent<Animator>().GetFloat("Speed") == 0.0f)
+                {
+                    GetComponent<Animator>().SetFloat("Speed", playerSpeed);
+                }
+                playerMesh.eulerAngles = new Vector3(0, (Mathf.Atan2(x, z) * 180 / Mathf.PI), 0);
+            }
+            else if(GetComponent<Animator>().GetFloat("Speed") != 0.0f)
+            {
+
+                GetComponent<Animator>().SetFloat("Speed", 0.0f);
             }
 
             Vector3 move = transform.right * x + transform.forward * z;

@@ -11,15 +11,43 @@ public class ActiveConvoyer : MonoBehaviour
 
     [SerializeField]
     private ConveyorBelt m_ref;
+    [SerializeField]
+    private Material m_onButtonColor;
+    [SerializeField]
+    private Material m_offButtonColor;
+
+    public float m_cooldown = 5.0f;
+    private float m_timer = 0.0f;
+    private bool m_ready = true;
+
+    private void Update()
+    {
+        if (m_timer >= 0.0f)
+        {
+            m_timer -= Time.deltaTime;
+        }
+        else if (!m_ready)
+        {
+            m_ready = true;
+            GetComponent<Renderer>().materials[1].CopyPropertiesFromMaterial(m_offButtonColor);
+        }
+
+    }
 
     public void SpawnItem()
     {
+        if (!m_ready)
+        {
+            return;
+        }
+
         m_ref.ResetConveyor();
         for (int nbObject = 0 ; nbObject < m_objects.Count; nbObject++)
         {
-            Debug.Log("Spawn");
             Instantiate(m_objects[nbObject], m_transform.position, Quaternion.identity);
         }
-        
+        m_ready = false;
+        m_timer = m_cooldown;
+        GetComponent<Renderer>().materials[1].CopyPropertiesFromMaterial(m_onButtonColor);
     }
 }

@@ -27,6 +27,7 @@ public class Catch : MonoBehaviour
             if (Input.GetButtonDown("InteractPlayer" + gameObject.GetComponent<Player>().playerNumber) && m_objectTimer <= 0.0f)
             {
                 m_pickable.GetComponent<Transform>().SetParent(null);
+                m_pickable.AddComponent<Rigidbody>();
                 m_pickable = null;
             }
         }
@@ -55,7 +56,7 @@ public class Catch : MonoBehaviour
                 {
                     m_objectTimer = 1.0f;
                     other.gameObject.GetComponent<Transform>().SetParent(m_handPlaceHolder);
-                    //other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    Destroy(other.gameObject.GetComponent<Rigidbody>());
                     m_pickable = other.gameObject;
 
                 }
