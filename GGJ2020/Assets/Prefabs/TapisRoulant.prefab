@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d6149c7ff4df04c9963ac0f8cc44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textureAnim: {fileID: 434363323}
   m_isActivated: 0
   timeToActive: 4
   minSecondsBeforeNextBreak: 10
@@ -256,7 +257,7 @@ MonoBehaviour:
   ScrollY: -1.5
   AffectedGameObject: {fileID: 8425630232100317149}
   MaterialSlotID: 3
-  TapisRoulantActive: 0
+  TapisRoulantActive: 1
 --- !u!1 &4401220369574589897
 GameObject:
   m_ObjectHideFlags: 0
