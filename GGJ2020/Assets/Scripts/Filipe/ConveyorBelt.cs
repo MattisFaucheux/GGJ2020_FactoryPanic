@@ -15,11 +15,6 @@ public class ConveyorBelt : MonoBehaviour
 
     private int m_currentIndex;
 
-    private void Start()
-    {
-        StartCoroutine(ResetConveyorEvery15());
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Pickable") && m_canMove)
@@ -28,32 +23,22 @@ public class ConveyorBelt : MonoBehaviour
                 m_speed * Time.deltaTime);
             if (Vector3.Distance(other.transform.position, m_path[m_currentIndex].position) < 0.5f)
             {
-                if (m_currentIndex + 1 < m_path.Count - 1)
+                if (m_currentIndex + 1 < m_path.Count)
                 {
                     m_currentIndex++;
                 }
                 else
                 {
                     m_canMove = false;
-                    StartCoroutine(ResetConveyor());
                 }
             }
         }
     }
 
-    IEnumerator ResetConveyor()
+    public void ResetConveyor()
     {
-        yield return new WaitForSeconds(1.0f);
         m_currentIndex = 0;
         m_canMove = true;
-    }
-
-    IEnumerator ResetConveyorEvery15()
-    {
-        yield return new WaitForSeconds(15.0f);
-        m_currentIndex = 0;
-        m_canMove = true;
-        yield return ResetConveyorEvery15();
     }
 
 }
