@@ -3313,6 +3313,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011027631, y: 0.0033800001, z: 0.0033799992}
   m_Center: {x: 0.0055138157, y: -0.0000000081490725, z: 0}
+--- !u!95 &1150866626
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150866624}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a847310312159649a0e650273c01b7b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1173297637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,18 +3614,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 275093594}
     m_Modifications:
-    - target: {fileID: 1388854719, guid: b8c2aa8556311b545aa07b088c8025a1, type: 3}
-      propertyPath: playerSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1388854719, guid: b8c2aa8556311b545aa07b088c8025a1, type: 3}
-      propertyPath: timeDashCooldown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1388854719, guid: b8c2aa8556311b545aa07b088c8025a1, type: 3}
-      propertyPath: dashSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4990504577988179211, guid: b8c2aa8556311b545aa07b088c8025a1,
         type: 3}
       propertyPath: m_Name
