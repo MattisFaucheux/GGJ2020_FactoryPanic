@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class PauseMenu : MonoBehaviour
             m_timer += Time.deltaTime;
             string minutes = Mathf.Floor(m_timer / 60).ToString("00");
             string seconds = (m_timer % 60).ToString("00");
-            FindObjectOfType<Text>().text = string.Format("{0}:{1}", minutes, seconds);
+            FindObjectOfType<TextMeshProUGUI>().text = string.Format("{0}:{1}", minutes, seconds);
         }
 
         if (GetComponentInChildren<Health>())
