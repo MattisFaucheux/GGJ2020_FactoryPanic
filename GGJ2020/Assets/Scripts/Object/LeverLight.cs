@@ -6,6 +6,7 @@ public class LeverLight : MonoBehaviour
 {
 
     public Light ourLight;
+    public Light emergencyLight;
     public Transform lever;
     private bool m_isActivated = false;
 
@@ -28,6 +29,7 @@ public class LeverLight : MonoBehaviour
         if(m_activatePlayer1 && m_activatePlayer2 && !m_isActivated)
         {
             m_isActivated = true;
+            emergencyLight.GetComponent<Light>().enabled = false;
             ourLight.GetComponent<Light>().enabled = true;
             lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 100);
         }
@@ -68,7 +70,9 @@ public class LeverLight : MonoBehaviour
     void Disable()
     {
         ourLight.GetComponent<Light>().enabled = false;
+        emergencyLight.GetComponent<Light>().enabled = true;
         m_isActivated = false;
         lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 0);
     }
+
 }
