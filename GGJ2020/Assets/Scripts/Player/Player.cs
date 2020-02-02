@@ -54,6 +54,11 @@ public class Player : MonoBehaviour
             {
                 other.gameObject.GetComponent<LeverLight>().PlayerActivate(playerNumber);
             }
+
+            if(other.gameObject.GetComponent<RepairConvoyer>())
+            {
+                other.gameObject.GetComponent<RepairConvoyer>().PlayerActivate(playerNumber);
+            }
         }
     }
 
