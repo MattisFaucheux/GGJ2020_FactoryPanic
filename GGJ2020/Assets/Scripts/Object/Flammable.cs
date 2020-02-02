@@ -18,6 +18,7 @@ public class Flammable : MonoBehaviour
         else
         {
             m_particleSystem.Stop();
+            GetComponent<GeneratorRandomBroke>().SetGeneratorOnFire();
         }
         
     }
