@@ -50,6 +50,11 @@ public class Player : MonoBehaviour
                 other.gameObject.GetComponent<Flammable>().SetIsOnFire(false);
                 GetComponent<Catch>().DestroyPickable();
             }
+
+            if (other.gameObject.GetComponent<LeverLight>())
+            {
+                other.gameObject.GetComponent<LeverLight>().PlayerActivate(playerNumber);
+            }
         }
     }
 
