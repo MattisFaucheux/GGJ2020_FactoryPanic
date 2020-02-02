@@ -849,6 +849,7 @@ MonoBehaviour:
   m_onButtonColor: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
   m_offButtonColor: {fileID: 2100000, guid: 4a541caa472c3a549be34a29dacf7ac3, type: 2}
   m_cooldown: 10
+  repairConvoyer: {fileID: 4401220370657365154}
 --- !u!1001 &4401220371155102836
 PrefabInstance:
   m_ObjectHideFlags: 0
