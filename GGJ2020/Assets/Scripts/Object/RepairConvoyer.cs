@@ -17,6 +17,11 @@ public class RepairConvoyer : MonoBehaviour
     public Material on;
     public Material off;
 
+    [SerializeField]
+    private Material m_breakButtonColor;
+    [SerializeField]
+    private GameObject m_buttonToRepare;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +35,7 @@ public class RepairConvoyer : MonoBehaviour
         {
             m_isActivated = true;
             GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(on);
+            m_buttonToRepare.GetComponent<Renderer>().materials[1].CopyPropertiesFromMaterial(off);
         }
 
         if (m_timeActivePlayer1 > 0.0f)
