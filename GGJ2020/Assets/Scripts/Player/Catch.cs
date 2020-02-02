@@ -15,6 +15,8 @@ public class Catch : MonoBehaviour
 
     private GameObject m_pickable = null;
     private ObjectInHand m_objectInHand;
+    [SerializeField]
+    private Transform m_handPlaceHolder;
     private float m_objectTimer = 0.0f;
 
     void Update()
@@ -25,7 +27,6 @@ public class Catch : MonoBehaviour
             if (Input.GetButtonDown("InteractPlayer" + gameObject.GetComponent<Player>().playerNumber) && m_objectTimer <= 0.0f)
             {
                 m_pickable.GetComponent<Transform>().SetParent(null);
-                m_pickable.GetComponent<Rigidbody>().isKinematic = false;
                 m_pickable = null;
             }
         }
@@ -42,7 +43,7 @@ public class Catch : MonoBehaviour
                 {
                     other.gameObject.GetComponentInParent<Catch>().m_pickable = null;
                     m_objectTimer = 1.0f;
-                    other.gameObject.GetComponent<Transform>().SetParent(gameObject.GetComponent<Transform>());
+                    other.gameObject.GetComponent<Transform>().SetParent(m_handPlaceHolder);
                     m_pickable = other.gameObject;
                 }
 
@@ -53,7 +54,7 @@ public class Catch : MonoBehaviour
                 if (m_pickable == null)
                 {
                     m_objectTimer = 1.0f;
-                    other.gameObject.GetComponent<Transform>().SetParent(gameObject.GetComponent<Transform>());
+                    other.gameObject.GetComponent<Transform>().SetParent(m_handPlaceHolder);
                     //other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     m_pickable = other.gameObject;
 
