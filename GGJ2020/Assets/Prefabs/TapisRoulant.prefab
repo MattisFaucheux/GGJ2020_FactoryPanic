@@ -198,6 +198,9 @@ MonoBehaviour:
   timeToActive: 4
   on: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
   off: {fileID: 2100000, guid: 4a541caa472c3a549be34a29dacf7ac3, type: 2}
+  m_breakButtonColor: {fileID: 2100000, guid: 2de0c1d195d5a9a4481b58c82ac56b0e, type: 2}
+  m_repareButtonColor: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
+  m_buttonToRepare: {fileID: 8618255215560221943}
 --- !u!1 &2699250855451307245
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +851,7 @@ MonoBehaviour:
   m_ref: {fileID: 4401220370752462398}
   m_onButtonColor: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
   m_offButtonColor: {fileID: 2100000, guid: 4a541caa472c3a549be34a29dacf7ac3, type: 2}
+  m_breakButtonColor: {fileID: 2100000, guid: 2de0c1d195d5a9a4481b58c82ac56b0e, type: 2}
   m_cooldown: 10
   repairConvoyer: {fileID: 4401220370657365154}
 --- !u!1001 &4401220371155102836
