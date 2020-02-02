@@ -841,8 +841,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_transform: {fileID: 505478566351016735}
-  m_objects: []
+  m_objects:
+  - {fileID: 8109670579120142285, guid: 122a56c41ce9a8847af279b98c26037f, type: 3}
+  - {fileID: 3561778009476100825, guid: ab2633186b3075f489b37cf3f7f87a1d, type: 3}
+  - {fileID: 1199710817488919243, guid: 907e8709c6b76124fade7c7f2ffb1692, type: 3}
   m_ref: {fileID: 4401220370752462398}
+  m_onButtonColor: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
+  m_offButtonColor: {fileID: 2100000, guid: 4a541caa472c3a549be34a29dacf7ac3, type: 2}
+  m_cooldown: 10
 --- !u!1001 &4401220371155102836
 PrefabInstance:
   m_ObjectHideFlags: 0

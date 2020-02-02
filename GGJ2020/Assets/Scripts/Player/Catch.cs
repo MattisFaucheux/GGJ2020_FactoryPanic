@@ -55,7 +55,7 @@ public class Catch : MonoBehaviour
                 {
                     m_objectTimer = 1.0f;
                     other.gameObject.GetComponent<Transform>().SetParent(m_handPlaceHolder);
-                    //other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    Destroy(other.gameObject.GetComponent<Rigidbody>());
                     m_pickable = other.gameObject;
 
                 }
