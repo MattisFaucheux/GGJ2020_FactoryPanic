@@ -135,6 +135,7 @@ public class PipeBreakManager : MonoBehaviour
         m_pipelights[index].SetColor("_Color", Color.white);
         m_valveLights[index].SetColor("_Color", Color.white);
         m_pipes[index].transform.GetComponentInChildren<ParticleSystem>().Stop();
+        m_pipes[index].GetComponent<Animator>().SetBool("play", false);
     }
 
     private void OnApplicationQuit()
