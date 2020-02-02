@@ -17,10 +17,13 @@ public class LeverLight : MonoBehaviour
 
     public float timeToActive = 4.0f;
 
+    public int minSecondsBeforeNextBreak = 10;
+    public int maxSecondsBeforeNextBreak = 30;
+
     // Start is called before the first frame update
     void Start()
     {
-        Disable();
+        StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class LeverLight : MonoBehaviour
             emergencyLight.GetComponent<Light>().enabled = false;
             ourLight.GetComponent<Light>().enabled = true;
             lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 100);
+            StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
         }
 
         if(m_timeActivePlayer1 > 0.0f)
@@ -73,6 +77,13 @@ public class LeverLight : MonoBehaviour
         emergencyLight.GetComponent<Light>().enabled = true;
         m_isActivated = false;
         lever.eulerAngles = new Vector3(lever.eulerAngles.x, lever.eulerAngles.y, 0);
+    }
+
+    IEnumerator StartNextDefect(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Disable();
+        
     }
 
 }
