@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -17,20 +18,31 @@ public class PauseMenu : MonoBehaviour
     
     [SerializeField]
     private EventSystem m_es;
+    private float m_timer;
 
 
     void Start()
     {
         m_pauseMenu.SetActive(false);
         m_soundMenu.SetActive(false);
+        ResetTimer();
     }
     
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) && !m_pauseMenu.activeSelf)
-            OpenPause();
+        if (!m_pauseMenu.activeSelf)
+        {
+            m_timer += Time.deltaTime;
+            string minutes = Mathf.Floor(m_timer / 60).ToString("00");
+            string seconds = (m_timer % 60).ToString("00");
+            FindObjectOfType<Text>().text = string.Format("{0}:{1}", minutes, seconds);
+        }
         
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) && !m_pauseMenu.activeSelf)
+        {
+            OpenPause();
+        }
     }
 
     private void OpenPause()
@@ -64,5 +76,10 @@ public class PauseMenu : MonoBehaviour
     {
         m_soundMenu.SetActive(false);
         m_pauseMenu.SetActive(true);
+    }
+
+    private void ResetTimer()
+    {
+        m_timer = 0.0f;
     }
 }

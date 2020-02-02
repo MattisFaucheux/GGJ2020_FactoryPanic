@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -20,16 +21,18 @@ public class Player : MonoBehaviour
     public float timeDashCooldown = 1f;
     private float m_lastX;
     private float m_lastZ;
+    private float m_timer;
 
     [SerializeField]
     private Transform m_spawnExtinguisher;
     [SerializeField]
     private GameObject m_extinguisher;
 
+
     public PipeBreakManager pipeBreakManager;
 
     void Start()
-    {
+    { 
         m_controller = GetComponent<CharacterController>();
     }
 
@@ -148,5 +151,4 @@ public class Player : MonoBehaviour
         m_isCooldownDash = true;
     }
 
-    
 }
