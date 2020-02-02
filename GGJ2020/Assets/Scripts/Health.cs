@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
 
     public BrokentObjectManager manager;
 
+    public float limit;
+
     float scaleX;
     void Start()
     {
@@ -17,7 +19,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(manager.damage >= 50.0f)
+        if(manager.damage >= limit)
         {
             GetComponent<RectTransform>().localScale = new Vector3(0, GetComponent<RectTransform>().localScale.y, GetComponent<RectTransform>().localScale.z);
             GetComponentInParent<PauseMenu>().EndGame();   
