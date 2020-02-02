@@ -8015,6 +8015,16 @@ PrefabInstance:
       propertyPath: maxSecondsBeforeNextBreak
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 4401220370657365154, guid: 92e90538ad6f15c4cbb1c013e37040e5,
+        type: 3}
+      propertyPath: m_isActivated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528091025169696700, guid: 92e90538ad6f15c4cbb1c013e37040e5,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92e90538ad6f15c4cbb1c013e37040e5, type: 3}
 --- !u!1001 &877015681
@@ -9552,6 +9562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Generateur 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648251024358697589, guid: 74ab1b6bb025931499923cc84b5e6860,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9215793935268640026, guid: 74ab1b6bb025931499923cc84b5e6860,
         type: 3}
@@ -22475,7 +22490,7 @@ PrefabInstance:
     - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
       propertyPath: maxSecondsBeforeNextBreak
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
@@ -24551,7 +24566,7 @@ MonoBehaviour:
   m_soundMenu: {fileID: 1986119540387130431}
   ResumeButtonPause: {fileID: 1986119540369630185}
   CloseButtonSound: {fileID: 1986119539604600456}
-  m_es: {fileID: 0}
+  m_es: {fileID: 1683852151}
 --- !u!114 &1986119538736267930
 MonoBehaviour:
   m_ObjectHideFlags: 0
