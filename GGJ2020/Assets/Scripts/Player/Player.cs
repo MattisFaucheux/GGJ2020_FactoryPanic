@@ -43,19 +43,21 @@ public class Player : MonoBehaviour
                 Destroy(other.gameObject);
                 GetComponent<Catch>().DestroyPickable();
             }
-
-            if (other.gameObject.GetComponent<Flammable>() && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Extinguisher)
+            else if (other.gameObject.GetComponent<Flammable>() && GetComponent<Catch>().GetObjectInHand() == Catch.ObjectInHand.Extinguisher)
             {
                 other.gameObject.GetComponent<Flammable>().SetIsOnFire(false);
                 GetComponent<Catch>().DestroyPickable();
             }
-
-            if (other.gameObject.GetComponent<LeverLight>())
+            else if (other.gameObject.GetComponent<LeverLight>())
             {
                 other.gameObject.GetComponent<LeverLight>().PlayerActivate(playerNumber);
             }
-
-            if(other.gameObject.GetComponent<RepairConvoyer>())
+            else if (other.gameObject.GetComponent<ActiveConvoyer>())
+            {
+                Debug.Log("Active Convoyer");
+                other.gameObject.GetComponent<ActiveConvoyer>().SpawnItem();
+            }
+            else if (other.gameObject.GetComponent<RepairConvoyer>())
             {
                 other.gameObject.GetComponent<RepairConvoyer>().PlayerActivate(playerNumber);
             }
