@@ -20,6 +20,8 @@ public class ActiveConvoyer : MonoBehaviour
     private float m_timer = 0.0f;
     private bool m_ready = true;
 
+    public RepairConvoyer repairConvoyer;
+
     private void Update()
     {
         if (m_timer >= 0.0f)
@@ -36,7 +38,7 @@ public class ActiveConvoyer : MonoBehaviour
 
     public void SpawnItem()
     {
-        if (!m_ready)
+        if (!m_ready || !repairConvoyer.m_isActivated)
         {
             return;
         }
