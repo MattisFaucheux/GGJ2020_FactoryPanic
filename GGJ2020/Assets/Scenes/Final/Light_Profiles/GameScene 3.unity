@@ -783,7 +783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170563959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.3, y: 6.98, z: 8.77}
+  m_LocalPosition: {x: -6.46, y: 6.66, z: 9.27}
   m_LocalScale: {x: 3.818468, y: 4.4203076, z: 0.03325962}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1420,6 +1420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampe (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1903762856363286215, guid: 62598e8d447e4ed429abe48ea97779c3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0c4d8c2b04f7eb4db88fae9c88f99de, type: 2}
     - target: {fileID: 3750383513608198152, guid: 62598e8d447e4ed429abe48ea97779c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2708,7 +2713,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 10651, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: d1b3daf5f00f12248acced668ead57c3, type: 2}
     - target: {fileID: -927199367670048503, guid: 7c5579b1796079f47bb8bd23b632931f,
         type: 3}
       propertyPath: m_Name
@@ -2965,6 +2970,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
+      propertyPath: ourLight.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
+        type: 3}
       propertyPath: ourLight
       value: 
       objectReference: {fileID: 0}
@@ -2973,6 +2983,26 @@ PrefabInstance:
       propertyPath: emergencyLight
       value: 
       objectReference: {fileID: 2079569499}
+    - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
+        type: 3}
+      propertyPath: ourLight.Array.data[0]
+      value: 
+      objectReference: {fileID: 1835064003}
+    - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
+        type: 3}
+      propertyPath: ourLight.Array.data[1]
+      value: 
+      objectReference: {fileID: 1692143058}
+    - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
+        type: 3}
+      propertyPath: ourLight.Array.data[2]
+      value: 
+      objectReference: {fileID: 1631667068}
+    - target: {fileID: 5166212965756047330, guid: 52ed54e5cc68413499f60af83bc1a9a4,
+        type: 3}
+      propertyPath: ourLight.Array.data[3]
+      value: 
+      objectReference: {fileID: 165294286}
     - target: {fileID: 5166212965756047331, guid: 52ed54e5cc68413499f60af83bc1a9a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3337,6 +3367,21 @@ PrefabInstance:
       propertyPath: repairConvoyer
       value: 
       objectReference: {fileID: 966596385}
+    - target: {fileID: 4738183379177510628, guid: 92e90538ad6f15c4cbb1c013e37040e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738183379177510628, guid: 92e90538ad6f15c4cbb1c013e37040e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738183379177510628, guid: 92e90538ad6f15c4cbb1c013e37040e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92e90538ad6f15c4cbb1c013e37040e5, type: 3}
 --- !u!1001 &877015681
@@ -3644,7 +3689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906430665}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000029504295}
-  m_LocalPosition: {x: -1.8100004, y: 6.98, z: 8.77}
+  m_LocalPosition: {x: 3.03, y: 6.66, z: 9.27}
   m_LocalScale: {x: 3.818468, y: 4.4203076, z: 0.03325962}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4166,7 +4211,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 10651, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: d1b3daf5f00f12248acced668ead57c3, type: 2}
     - target: {fileID: -927199367670048503, guid: 7c5579b1796079f47bb8bd23b632931f,
         type: 3}
       propertyPath: m_Name
@@ -4663,7 +4708,7 @@ PrefabInstance:
     - target: {fileID: 2642326748058378740, guid: 0a39e0a7a8aaf5f4e909d33cd633f4ea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.89
+      value: 6.84
       objectReference: {fileID: 0}
     - target: {fileID: 2642326748058378740, guid: 0a39e0a7a8aaf5f4e909d33cd633f4ea,
         type: 3}
@@ -4714,6 +4759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642326748058378740, guid: 0a39e0a7a8aaf5f4e909d33cd633f4ea,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5310001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a39e0a7a8aaf5f4e909d33cd633f4ea, type: 3}
@@ -5000,6 +5050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampe gauche
       objectReference: {fileID: 0}
+    - target: {fileID: 1903762856363286215, guid: 62598e8d447e4ed429abe48ea97779c3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b2c006bb9f2f194fa728bc63510dd58, type: 2}
     - target: {fileID: 3750383513608198152, guid: 62598e8d447e4ed429abe48ea97779c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5038,7 +5093,7 @@ PrefabInstance:
     - target: {fileID: 3750383513608198152, guid: 62598e8d447e4ed429abe48ea97779c3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3750383513608198152, guid: 62598e8d447e4ed429abe48ea97779c3,
         type: 3}
@@ -10410,7 +10465,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 10651, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: d1b3daf5f00f12248acced668ead57c3, type: 2}
     - target: {fileID: -927199367670048503, guid: 3852b9c42a9520d49bcab33b5c38490c,
         type: 3}
       propertyPath: m_Name
@@ -12644,7 +12699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841499053}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000029504295}
-  m_LocalPosition: {x: -6.6520004, y: 6.98, z: 8.77}
+  m_LocalPosition: {x: -1.8120003, y: 6.66, z: 9.27}
   m_LocalScale: {x: 3.818468, y: 4.4203076, z: 0.03325962}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13226,7 +13281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962214373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.43, y: 2.34, z: 8.29}
+  m_LocalPosition: {x: -3.98, y: 3.12, z: 8.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2007537499}
