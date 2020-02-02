@@ -8,6 +8,8 @@ public class Puddle : MonoBehaviour
     public int minSecondsBeforeNextBreak = 10;
     public int maxSecondsBeforeNextBreak = 30;
 
+    public bool isActivated = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +32,16 @@ public class Puddle : MonoBehaviour
 
     void Enable()
     {
+        isActivated = true;
+
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<MeshRenderer>().enabled = true;
     }
 
     public void Disable()
     {
+        isActivated = false;
+
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
 

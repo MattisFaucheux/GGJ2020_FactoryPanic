@@ -7,7 +7,7 @@ public class PipeBreakManager : MonoBehaviour
     [SerializeField] private List<GameObject> m_pipes;
     [SerializeField] private List<Material> m_pipelights;
     [SerializeField] private List<Material> m_valveLights;
-    private List<bool> isBorked;
+    public List<bool> isBorked;
 
     [SerializeField] private List<GameObject> m_valve;
 
@@ -24,7 +24,6 @@ public class PipeBreakManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
-        isBorked = new List<bool>();
         isFixingValve = new List<bool>();
         isFixingPipe = new List<bool>();
 
