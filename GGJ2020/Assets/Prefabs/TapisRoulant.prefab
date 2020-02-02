@@ -194,12 +194,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d6149c7ff4df04c9963ac0f8cc44a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textureAnim: {fileID: 434363323}
   m_isActivated: 0
   timeToActive: 4
+  minSecondsBeforeNextBreak: 10
+  maxSecondsBeforeNextBreak: 30
   on: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
   off: {fileID: 2100000, guid: 4a541caa472c3a549be34a29dacf7ac3, type: 2}
   m_breakButtonColor: {fileID: 2100000, guid: 2de0c1d195d5a9a4481b58c82ac56b0e, type: 2}
-  m_repareButtonColor: {fileID: 2100000, guid: 86004dfb89b14ea49b05e5085315552e, type: 2}
   m_buttonToRepare: {fileID: 8618255215560221943}
 --- !u!1 &2699250855451307245
 GameObject:
@@ -210,6 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1382309879100661502}
+  - component: {fileID: 434363323}
   m_Layer: 0
   m_Name: TapisRoulant
   m_TagString: Untagged
@@ -224,7 +227,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2699250855451307245}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -4.9700003, y: 0.9025574, z: 2.1800003}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -238,6 +241,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &434363323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699250855451307245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b4c942e47818d429bcca360868270b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScrollX: -1
+  ScrollY: -1.5
+  AffectedGameObject: {fileID: 8425630232100317149}
+  MaterialSlotID: 3
+  TapisRoulantActive: 1
 --- !u!1 &4401220369574589897
 GameObject:
   m_ObjectHideFlags: 0

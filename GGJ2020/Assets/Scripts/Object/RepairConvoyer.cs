@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RepairConvoyer : MonoBehaviour
 {
+    public Script_TexturePanning textureAnim;
 
     public bool m_isActivated = false;
 
@@ -36,6 +37,7 @@ public class RepairConvoyer : MonoBehaviour
     {
         if (m_activatePlayer1 && m_activatePlayer2 && !m_isActivated)
         {
+            textureAnim.TapisRoulantActive = true;
             m_isActivated = true;
             GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(on);
             StartCoroutine(StartNextDefect(Random.Range(minSecondsBeforeNextBreak, maxSecondsBeforeNextBreak)));
@@ -77,6 +79,7 @@ public class RepairConvoyer : MonoBehaviour
 
     void Disable()
     {
+        textureAnim.TapisRoulantActive = false;
         m_isActivated = false;
         GetComponent<MeshRenderer>().materials[1].CopyPropertiesFromMaterial(off);
     }
