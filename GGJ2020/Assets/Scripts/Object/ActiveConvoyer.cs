@@ -19,6 +19,12 @@ public class ActiveConvoyer : MonoBehaviour
     public float m_cooldown = 5.0f;
     private float m_timer = 0.0f;
     private bool m_ready = true;
+    private List<GameObject> m_instantiates;
+
+    private void Start()
+    {
+        m_instantiates = new List<GameObject>();
+    }
 
     private void Update()
     {
@@ -41,10 +47,18 @@ public class ActiveConvoyer : MonoBehaviour
             return;
         }
 
+        if (m_instantiates.Count > 0)
+        {
+            for (int nbObject = 0; nbObject < m_objects.Count; nbObject++)
+            {
+                Destroy(m_instantiates[nbObject]);
+            }
+        }
+
         m_ref.ResetConveyor();
         for (int nbObject = 0 ; nbObject < m_objects.Count; nbObject++)
         {
-            Instantiate(m_objects[nbObject], m_transform.position, Quaternion.identity);
+            m_instantiates.Add(Instantiate(m_objects[nbObject], m_transform.position, Quaternion.identity));
         }
         m_ready = false;
         m_timer = m_cooldown;
