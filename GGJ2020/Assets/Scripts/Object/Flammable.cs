@@ -6,7 +6,7 @@ public class Flammable : MonoBehaviour
 {
     [SerializeField]
     private ParticleSystem m_particleSystem;
-    private bool m_isOnfire = false;
+    public bool m_isOnfire = false;
     
 
 
