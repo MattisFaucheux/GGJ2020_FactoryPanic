@@ -10,19 +10,30 @@ Made with Unity
 Credits: 
 
 3D Art
+
 Victor CHEDEVILLE
+
 William Alexandre THIBAULT
 
+
 Programming
+
 Filipe ANTUNES DA SILVA
+
 Mattis FAUCHEUX
+
 Félix POGNARD
 
+
 Game Design
+
 Axel KUS
+
 Sharon RIBEIRO
 
+
 Music and sounds
+
 Nicolas DES ALLIERS
 
 Je me suis occupé de la programmation des personnages principalement (leurs mouvements , actions et intéractions).
